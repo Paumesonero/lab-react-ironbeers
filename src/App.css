@@ -4,3 +4,27 @@
   margin: 0;
   padding: 0;
 }
+
+
+
+.beers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+.each-beer-container {
+  display: flex;
+  border-bottom: 1px solid gray;
+}
+
+.content-beer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 15px;
+}
+
+.each-beer-img {
+  width: 30px;
+}
