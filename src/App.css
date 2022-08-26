@@ -28,3 +28,11 @@
 .each-beer-img {
   width: 30px;
 }
+
+
+/*** Iteration 4 ***/
+.beer-atenuationlvl {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 10px;
+}

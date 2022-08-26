@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 export default function Beers() {
 
     const [beers, setBeers] = useState(null)
@@ -27,7 +28,9 @@ export default function Beers() {
                             <img src={el.image_url} alt={el.name} className='each-beer-img' />
                         </div>
                         <div className='content-beer'>
-                            <h3>{el.name}</h3>
+                            <Link to={`/beers/${el._id}`}>
+                                <h3>{el.name}</h3>
+                            </Link>
                             <p>{el.tagline}</p>
                             <p> <strong>Created by:</strong> {el.contributed_by}</p>
                         </div>
