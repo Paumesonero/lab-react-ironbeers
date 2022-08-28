@@ -1,45 +1,37 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
 import Navbar from './Navbar'
+import axios from 'axios'
 
 export default function RandomBeer() {
-
-    const { beerId } = useParams();
-    const [beer, setBeer] = useState(null)
+    const [random, setRandom] = useState(null)
 
     useEffect(() => {
         const getBeer = async () => {
             try {
-                const beerFromApi = await axios.get(`https://ih-beers-api2.herokuapp.com/beers/${beerId}`)
+                const beerFromApi = await axios.get('https://ih-beers-api2.herokuapp.com/beers/random')
                 console.log(beerFromApi)
-                setBeer(beerFromApi.data)
+                setRandom(beerFromApi.data)
             } catch (error) {
                 console.log(error)
             }
         }
         getBeer()
-    }, [beerId])
+    }, [])
     return (
         <div>
             <Navbar />
-            {beer && (
+            {random && (
                 <div>
-                    <img src={beer.image_url} alt={beer.name} width='100px' />
-                    <div className='beer-atenuationlvl'>
-                        <h2>{beer.name}</h2>
-                        <p>{beer.attenuation_level}</p>
-                    </div>
-                    <div className='beer-atenuationlvl'>
-                        <h6>{beer.tagline}</h6>
-                        <p>{beer.first_brewed}</p>
-                    </div>
-                    <p>{beer.description}</p>
-                    <p>{beer.contributed_by}</p>
+                    <img src={random.image_url} alt={random.name} width='100px' />
+                    <h3>{random.name}</h3>
+                    <p>{random.tagline}</p>
+                    <p>{random.first_brewed}</p>
+                    <p>{random.attenuation_level}</p>
+                    <p>{random.description}</p>
+                    <p>Contributed by: {random.contributed_by}</p>
                 </div>
 
             )}
-            {!beer && <p>Loading...</p>}
         </div>
     )
 }

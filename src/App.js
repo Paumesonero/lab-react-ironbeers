@@ -2,6 +2,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom'
 import Home from './components/Home';
 import Beers from './components/Beers';
+import BeerDetail from './components/BeerDetail';
 import RandomBeer from './components/RandomBeer';
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/beers' element={<Beers />} />
-        <Route path='/beers/:beerId' element={<RandomBeer />} />
+        <Route path='/beers/:beerId' element={<BeerDetail />} />
+        <Route path='/random' element={<RandomBeer />} />
       </Routes>
     </div>
   );

@@ -17,7 +17,7 @@ export default function Home() {
 
       <div>
         <img src={randomBeerImg} alt="random beer background" height="150px" />
-        <Link to="/random-beer">Random Beer</Link>
+        <Link to="/random">Random Beer</Link>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
           Facere, fuga repellendus error ullam labore aspernatur hic
           laborum iure culpa, harum blanditiis enim laboriosam tempora
